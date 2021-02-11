@@ -71,3 +71,33 @@ git branch -d <branch-name>
 
 git pull
 ```
+
+## Style Guide
+**Files**
+files should be named with all lower case letters and underscores between words
+
+**CSS**
+- Please follow the BEM style guide for CSS
+  - https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
+
+**Python**
+- Classes start capitalized and use camelCasing
+- Limit all lines to a maximum of 79 characters.
+- Surround top-level function and class definitions with two blank lines.
+- Method definitions inside a class are surrounded by a single blank line.
+
+```
+
+
+class Person:
+
+    def method():
+        pass
+
+
+def greeting():
+    return "Hello"
+
+
+print(greeting())
+```
