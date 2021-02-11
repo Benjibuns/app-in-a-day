@@ -87,3 +87,22 @@
   - profiles
   - account creation
   - messaging
+
+
+
+## Color Palette
+
+> The lower the number the darker the color (dark = black, primary = reds, accents = gray - white,)
+
+```css
+--dark: #0b090aff;
+--dark1: #161a1dff;
+--primary: #660708ff;
+--primary1: #a4161aff;
+--primary2: #ba181bff;
+--primary3: #e5383bff;
+--accent: #b1a7a6ff;
+--accent1: #d3d3d3ff;
+--accent2: #f5f3f4ff;
+--accent3: #ffffffff;  
+```
