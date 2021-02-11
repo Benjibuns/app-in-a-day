@@ -1,6 +1,6 @@
 # app-in-a-day
 # SUPER DUPER WINNER
-  # OMEGA ULTRA SHOPPING EXTRAVAGANZA SAVER(Listful)(Insite)
+  # Listful
 - Shopping list 
   - with sub lists for different categories
   - full CRUD
@@ -47,6 +47,8 @@
       - Edit shopping list
       - wishlist
         - !COMING SOON!
+  # Name List
+    - Listful
 
 # (Second winner)
   # SUPER DUPER ULTRA MEGA JOB HELPER 5000(Insite)
