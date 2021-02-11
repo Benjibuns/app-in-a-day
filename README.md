@@ -108,3 +108,7 @@
 --accent2: #f5f3f4ff;
 --accent3: #ffffffff;  
 ```
+## Fonts
+Logo - Ubunto Bolg Italic 
+Navbar and Footer -  Nunito Medium
+Body - Nunito regular
