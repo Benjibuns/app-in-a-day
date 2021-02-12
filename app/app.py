@@ -69,7 +69,11 @@ def shopping_lists():
 
 @app.route('/single-shopping-list/<id>', methods=['GET'])
 def single_shopping_list(id):
-    return render_template('single_shopping_list.html')
+    if request.method == 'POST':
+        single_list = ShoppingList.query.get(id)
+        return render_template('single_shopping_list.html', single_list = single_list)
+    else:
+        return render_template('single_shopping_list.html')
 
 
 @app.route('/edit-list/<id>', methods=['GET', 'POST'])
