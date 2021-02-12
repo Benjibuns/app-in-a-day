@@ -80,6 +80,23 @@ git pull
 - Please follow the BEM style guide for CSS
   - https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
 
+**BEM Style Guide**
+```
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+        <h1>{{ message }}</h1>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+```
+
 **Python**
 - Classes start capitalized and use camelCasing
 - functions/methods names use snake_casing
