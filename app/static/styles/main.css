@@ -65,6 +65,7 @@ body {
     left: 0;
     bottom: 0;
 }
+
 .footer-logo {
     color: var(--accent2);
     font-family: 'Ubuntu', sans-serif;
