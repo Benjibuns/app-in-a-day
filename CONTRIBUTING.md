@@ -6,7 +6,7 @@
 ## First Steps
 
 Please contact project manager for next assignement.
-Make note of given issue#, you will need this later when creating branches.
+Assign yourself to the issue, make note of given issue#, you will need the issue# later.
 
 ## Create a branch
 
@@ -51,7 +51,7 @@ Change the title and description to explain your changes. Please make sure to us
 ```
 - Title: [issue#112] Add create shopping list form
 - Description: Added a new shopping list form that gives the user the ability to create and edit shopping list. This commit solves #10
-- Click Submit.
+- Click Create pull request.
 ```
 Don't forget to use one of the linking keywords. You can learn more about linking pull requests at the [GitHub Docs](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword).
 
@@ -63,7 +63,6 @@ Don't forget to use one of the linking keywords. You can learn more about linkin
 - checkout main branch
 - delete issue branch
 - pull latest code
-> go ask for next assignement
 ```
 git checkout main
 
@@ -71,6 +70,7 @@ git branch -d <branch-name>
 
 git pull
 ```
+> go ask for next assignement
 
 ## Style Guide
 **Files**
