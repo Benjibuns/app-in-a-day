@@ -84,8 +84,8 @@ def create_list(id):
             new_list = (title=title)
             db.session.add(new_list)
             db.session.commit()
-            flash("Your book was added", "success")
-            return redirect('/shopping_lists/id')
+            flash("Your new awesome list was added!!", "success")
+            return redirect('shopping_list/id')
         else:
             return render_template('create_list.html')
 
