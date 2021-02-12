@@ -37,6 +37,14 @@ body {
     justify-content: space-around;
     align-items: center;
     font-family: 'Nunito', sans-serif;
-    color: var(--accent2);
+    
+}
+
+.nav-wrapper__right a {
     text-decoration: none;
+    color: var(--accent2);
+}
+
+.nav-link--big {
+    font-size: 1.25em;
 }
