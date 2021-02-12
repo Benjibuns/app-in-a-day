@@ -18,3 +18,4 @@ $ pipenv shell
 >>> from fileName import db
 >>> db.create_all()
 ```
+- This will then add an app.sqlite file to your local computer
