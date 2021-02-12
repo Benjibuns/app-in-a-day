@@ -3,5 +3,19 @@
 {% block title %}Homepage{% endblock %} 
 
 {% block content %}
-  <h1>Hello</h1>
+
+  <div class="index-container">
+    <div class="button-wrapper">
+      <div class="button-wrapper__list">
+        <form action="/create-list">
+          <button type="submit">Create New List</button>
+        </form>
+        <form action="/wish-list">
+          <button type="submit">Wishlist</button>
+        </form>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  
 {% endblock %}

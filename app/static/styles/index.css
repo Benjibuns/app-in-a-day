@@ -1,0 +1,19 @@
+.index-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-wrapper__list {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  height: 125px;
+  width: 50%;
+}
