@@ -13,4 +13,30 @@
 
 body {
     background-color: var(--primary1);
+    margin: 0px;
+}
+
+.nav-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: var(--dark);
+    margin: 0px;
+}
+
+.nav-wrapper__left {
+    color: var(--accent2);
+    margin-left: 20px;
+    font-size: 1.25em;
+    letter-spacing: 6px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.nav-wrapper__right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    color: var(--accent2);
+    text-decoration: none;
 }
