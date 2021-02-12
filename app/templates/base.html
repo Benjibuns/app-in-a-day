@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='styles/main.css') }}"
+      href="{{ url_for('static', filename='styles/base.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/contact-us.css') }}"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -29,7 +33,7 @@
           <a href="" class="nav-link">Wishlist</a>
           <a href="" class="nav-link">Shopping Lists</a>
           <a href="" class="nav-link">About Us</a>
-          <a href="" class="nav-link">Contact Us</a>
+          <a href="/contact-us" class="nav-link">Contact Us</a>
           <a href="" class="nav-link--big">Account</a>
         </div>
       </div>
