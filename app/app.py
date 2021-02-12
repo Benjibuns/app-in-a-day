@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 class ShoppingList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(25), unique=False, nullable=False)
-    list_items = db.relationship('list_item', backref='single_shopping_list', lazy=True)
+    list_items = db.relationship('Item', backref='shoppingList', lazy=True)
 
 
 class Item(db.Model):
@@ -24,7 +24,7 @@ class Item(db.Model):
     name = db.Column(db.String(25), unique=True, nullable=False)
     quantity = db.Column(db.Integer, unique=False, nullable=False)
     description = db.Column(db.String(100), unique=False, nullable=True)
-    list_id = db.Column(db.Integer, db.ForeignKey('single_shopping_list.id'), nullable=False)
+    shopping_list_id = db.Column(db.Integer, db.ForeignKey('shoppingList.id'), nullable=False)
 
 
 @app.route('/')
@@ -77,15 +77,15 @@ def edit_list(id):
     return render_template('edit_list.html')
 
 
-@app.route('/create-list', methods=['GET', 'POST'])
-def create_list(id):
+@app.route('/create_list', methods=['GET', 'POST'])
+def create_list():
         if request.method == "POST":
             title = request.form.get("title")
-            new_list = (title=title)
+            new_list = ShoppingList(title=title)
             db.session.add(new_list)
             db.session.commit()
             flash("Your new awesome list was added!!", "success")
-            return redirect('shopping_list/id')
+            return redirect('/shopping_list/id')
         else:
             return render_template('create_list.html')
 
