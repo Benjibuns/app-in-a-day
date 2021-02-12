@@ -73,18 +73,37 @@ git pull
 > go ask for next assignement
 
 ## Style Guide
-**Files**
-files should be named with all lower case letters and underscores between words
+**Files & Routes**
+- files and routes should be named with all lower case letters and underscores between words
 
 **CSS**
 - Please follow the BEM style guide for CSS
   - https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
 
+**Jinja Style Guide**
+```
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+        <h1>{{ message }}</h1>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+```
+
 **Python**
 - Classes start capitalized and use camelCasing
+- functions/methods names use snake_casing
 - Limit all lines to a maximum of 79 characters.
 - Surround top-level function and class definitions with two blank lines.
 - Method definitions inside a class are surrounded by a single blank line.
+- leave an empy line at the bottom of the file
 
 ```
 
