@@ -12,7 +12,19 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = "secret"
 db = SQLAlchemy(app)
 
-# db models here
+
+class ShoppingList(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(25), unique=False, nullable=False)
+    list_items = db.relationship('list_item', backref='single_shopping_list', lazy=True)
+
+
+class Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(25), unique=True, nullable=False)
+    quantity = db.Column(db.Integer, unique=False, nullable=False)
+    description = db.Column(db.String(100), unique=False, nullable=True)
+    list_id = db.Column(db.Integer, db.ForeignKey('single_shopping_list.id'), nullable=False)
 
 
 @app.route('/')
