@@ -1,8 +1,14 @@
-## Starting the server
-- Run the following commands in your terminal to while in the `app` folder.o
-- You will only need to run `pipenv install` once to install dependencies
+## Installing the server
+- While in the `app` folder, run the following commands in your terminal 
 ```
-pipenv install
-pipenv shell
+$ pipenv install
+$ pipenv shell
+(app) python app.py
+```
+
+## Starting the server
+- While in the `app` folder, run the following commands in your terminal 
+```
+$ pipenv shell
 (app) python app.py
 ```
