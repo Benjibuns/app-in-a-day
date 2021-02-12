@@ -78,8 +78,16 @@ def edit_list(id):
 
 
 @app.route('/create-list', methods=['GET', 'POST'])
-def create_list():
-    return render_template('create_list.html')
+def create_list(id):
+        if request.method == "POST":
+            title = request.form.get("title")
+            new_list = (title=title)
+            db.session.add(new_list)
+            db.session.commit()
+            flash("Your book was added", "success")
+            return redirect('/shopping_lists/id')
+        else:
+            return render_template('create_list.html')
 
 
 @app.route('/delete-list', methods=['POST'])
