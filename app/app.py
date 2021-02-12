@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 class ShoppingList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(25), unique=False, nullable=False)
-    list_items = db.relationship('list_item', backref='single_shopping_list', lazy=True)
+    items = db.relationship('Item', backref='shopping_list', lazy=True)
 
 
 class Item(db.Model):
@@ -24,8 +24,7 @@ class Item(db.Model):
     name = db.Column(db.String(25), unique=True, nullable=False)
     quantity = db.Column(db.Integer, unique=False, nullable=False)
     description = db.Column(db.String(100), unique=False, nullable=True)
-    list_id = db.Column(db.Integer, db.ForeignKey('single_shopping_list.id'), nullable=False)
-
+    shopping_list_id = db.Column(db.Integer, db.ForeignKey('shopping_list.id'), nullable=False)
 
 @app.route('/')
 def home_page():
@@ -67,13 +66,21 @@ def shopping_lists():
     return render_template('shopping_lists.html')
 
 
-@app.route('/single-shopping-list/<id>', methods=['GET'])
+@app.route('/single_shopping_list/<id>', methods=['GET', 'POST'])
 def single_shopping_list(id):
     if request.method == 'POST':
+        # TODO: need to handle unique name check. currently it breaks the code
+        single_list = ShoppingList.query.get(id)
+        name = request.form.get('name')
+        quantity = request.form.get('quantity')
+        description = request.form.get('description')
+        new_item = Item(name=name, quantity=quantity, description=description, shopping_list=single_list)
+        db.session.add(new_item)
+        db.session.commit()
+        return redirect(f'/single_shopping_list/{single_list.id}')
+    else:
         single_list = ShoppingList.query.get(id)
         return render_template('single_shopping_list.html', single_list = single_list)
-    else:
-        return render_template('single_shopping_list.html')
 
 
 @app.route('/edit-list/<id>', methods=['GET', 'POST'])

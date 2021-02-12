@@ -1,2 +1,9 @@
-<form action="/single_shoping_list/id" method="POST">
+<form action="/single_shopping_list/{{ single_list.id }}" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="name" autocomplete="off">
+    <label for="quantity">quantity</label>
+    <input type="text" name="quantity" placeholder="quantity">
+    <label for="description">description</label>
+    <input type="text" name="description" placeholder="description">
+    <input type="submit" value="Add Item"> 
 </form>
