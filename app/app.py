@@ -95,12 +95,12 @@ def delete_list():
     return render_template('delete_list')
 
 
-@app.route('/edit-item', methods=['GET', 'POST'])
+@app.route('/edit_item', methods=['GET', 'POST'])
 def edit_item():
     return render_template('edit_item.html')
 
 
-@app.route('/delete-item', methods=['POST'])
+@app.route('/delete_item', methods=['POST'])
 def delete_item():
     return render_template('delete_item.html')
 

@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
-    {% block title %}Create List{% endblock %} 
-        {% block content %}
-        <h1>Create List</h1>
-        <form action="/create_list" method="POST">
-            <label for="title">Title: </label>
-            <input type="text" name="title" id="title" placeholder="Enter List Name..." autocomplete="off">
-            <input type="submit" value="Create List">
-        </form>
-        {% endblock %}
+  {% block title %}Create List{% endblock %} 
+    {% block content %}
+      <h1>Create List</h1>
+
+      <form action="/create_list" method="POST">
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title" placeholder="Enter List Name..." autocomplete="off">
+        <input type="submit" value="Create List">
+      </form>
+    {% endblock %}
