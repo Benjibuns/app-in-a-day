@@ -55,31 +55,35 @@ def shopping_lists():
     return render_template('shopping_lists.html')
 
 
-@app.route('/single-shopping-list/<id>', method=['GET'])
+@app.route('/single-shopping-list/<id>', methods=['GET'])
 def single_shopping_list(id):
     return render_template('single_shopping_list.html')
 
 
-@app.route('/edit-list/<id>', method=['GET', 'POST'])
+@app.route('/edit-list/<id>', methods=['GET', 'POST'])
 def edit_list(id):
     return render_template('edit_list.html')
 
 
-@app.route('/create-list', method=['GET', 'POST'])
+@app.route('/create-list', methods=['GET', 'POST'])
 def create_list():
     return render_template('create_list.html')
 
 
-@app.route('/delete-list', method=['POST'])
+@app.route('/delete-list', methods=['POST'])
 def delete_list():
     return render_template('delete_list')
 
 
-@app.route('/edit-item', method=['GET', 'POST'])
+@app.route('/edit-item', methods=['GET', 'POST'])
 def edit_item():
     return render_template('edit_item.html')
 
 
-@app.route('/delete-item', method=['POST'])
+@app.route('/delete-item', methods=['POST'])
 def delete_item():
     return render_template('delete_item.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
