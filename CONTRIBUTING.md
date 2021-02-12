@@ -80,7 +80,7 @@ git pull
 - Please follow the BEM style guide for CSS
   - https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
 
-**BEM Style Guide**
+**Jinja Style Guide**
 ```
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
 
