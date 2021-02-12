@@ -22,17 +22,20 @@ body {
     width: 100%;
     background-color: var(--dark);
     margin: 0px;
+    height: 100px;
+    align-content: center;
 }
 
 .nav-wrapper__left {
+    display: flex;
     color: var(--accent2);
     margin-left: 20px;
+    font-size: 3em;
 }
 
 .nav-wrapper__left a {
     text-decoration: none;
     color: var(--accent2);
-    font-size: 1.5em;
     letter-spacing: 6px;
     font-family: 'Ubuntu', sans-serif;
 }
