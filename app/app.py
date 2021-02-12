@@ -15,72 +15,71 @@ db = SQLAlchemy(app)
 # db models here
 
 
-
 @app.route('/')
-def homePage():
+def home_page():
     return render_template('index.html')
 
 
 @app.route('/success')
 def success():
-    return render_template()
+    return render_template('success.html')
 
 
 @app.route('/contact-us')
-def contactUs():
-    return render_template()
+def contact_us():
+    return render_template('contact_us.html')
 
 
 @app.route('/about-us')
-def aboutUs():
-    return render_template()
+def about_us():
+    return render_template('about_us.html')
 
 
 @app.route('/account')
 def account():
-    return render_template()
+    return render_template('account.html')
 
 
 @app.route('/auth-page')
-def authPage():
-    return render_template()
+def auth_page():
+    return render_template('auth_page.html')
 
 
 @app.route('/wish-list')
-def wishList():
-    return render_template()
+def wish_list():
+    return render_template('wish_list.html')
 
 
 @app.route('/shopping-lists')
-def shoppingLists():
-    return render_template()
+def shopping_lists():
+    return render_template('shopping_lists.html')
 
 
-@app.route('/shopping-list/<id>', method=['GET'])
-def shoppingList(id):
-    return render_template()
+@app.route('/single-shopping-list/<id>', method=['GET'])
+def single_shopping_list(id):
+    return render_template('single_shopping_list.html')
 
 
 @app.route('/edit-list/<id>', method=['GET', 'POST'])
-def editList(id):
-    return render_template()
+def edit_list(id):
+    return render_template('edit_list.html')
 
 
 @app.route('/create-list', method=['GET', 'POST'])
-def createList():
-    return render_template()
+def create_list():
+    return render_template('create_list.html')
 
 
 @app.route('/delete-list', method=['POST'])
-def deleteList():
-    return render_template()
+def delete_list():
+    return render_template('delete_list')
 
 
 @app.route('/edit-item', method=['GET', 'POST'])
-def editItem():
-    return render_template()
+def edit_item():
+    return render_template('edit_item.html')
 
 
 @app.route('/delete-item', method=['POST'])
-def deleteItem():
-    return render_template()
+def delete_item():
+    return render_template('delete_item.html')
