@@ -26,6 +26,7 @@ class Item(db.Model):
     description = db.Column(db.String(100), unique=False, nullable=True)
     shopping_list_id = db.Column(db.Integer, db.ForeignKey('shopping_list.id'), nullable=False)
 
+
 @app.route('/')
 def home_page():
     return render_template('index.html')
@@ -90,7 +91,15 @@ def edit_list(id):
 
 @app.route('/create_list', methods=['GET', 'POST'])
 def create_list():
-    return render_template('create_list.html')
+        if request.method == "POST":
+            title = request.form.get("title")
+            new_list = ShoppingList(title=title)
+            db.session.add(new_list)
+            db.session.commit()
+            flash("Your new awesome list was added!!", "success")
+            return redirect(f'/single_shopping_list/{new_list.id}')
+        else:
+            return render_template('create_list.html')
 
 
 @app.route('/delete_list', methods=['POST'])
