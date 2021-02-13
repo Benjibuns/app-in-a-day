@@ -64,7 +64,9 @@ def wish_list():
 
 @app.route('/shopping_lists')
 def shopping_lists():
-    return render_template('shopping_lists.html')
+    all_lists = ShoppingList.query.all()
+    print(all_lists)
+    return render_template('shopping_lists.html', all_lists = all_lists)
 
 
 @app.route('/single_shopping_list/<id>', methods=['GET', 'POST'])
