@@ -67,9 +67,21 @@ def shopping_lists():
     return render_template('shopping_lists.html')
 
 
-@app.route('/single_shopping_list/<id>', methods=['GET'])
+@app.route('/single_shopping_list/<id>', methods=['GET', 'POST'])
 def single_shopping_list(id):
-    return render_template('single_shopping_list.html')
+    if request.method == 'POST':
+        # TODO: need to handle unique name check. currently it breaks the code
+        single_list = ShoppingList.query.get(id)
+        name = request.form.get('name')
+        quantity = request.form.get('quantity')
+        description = request.form.get('description')
+        new_item = Item(name=name, quantity=quantity, description=description, shopping_list=single_list)
+        db.session.add(new_item)
+        db.session.commit()
+        return redirect(f'/single_shopping_list/{single_list.id}')
+    else:
+        single_list = ShoppingList.query.get(id)
+        return render_template('single_shopping_list.html', single_list = single_list)
 
 
 @app.route('/edit_list/<id>', methods=['GET', 'POST'])
