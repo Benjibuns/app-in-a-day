@@ -1,8 +1,4 @@
-<ul>
-    {% for list in all_lists %}
-    <li>
-        <h3>title: {{list.title}}</h3> 
-    </li>
-    <a href="/single_shoping_list/{{ list.id }}">View List</a>
-    {% endfor %}
-</ul>
+{% for list in all_lists %}
+<h3>title: {{list.title}}</h3> 
+<a href="/single_shoping_list/{{ list.id }}">View List</a>
+{% endfor %}
