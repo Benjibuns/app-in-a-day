@@ -37,7 +37,7 @@ def success():
     return render_template('success.html')
 
 
-@app.route('/contact-us')
+@app.route('/contact_us')
 def contact_us():
     return render_template('contact_us.html')
 
@@ -57,7 +57,7 @@ def auth_page():
     return render_template('auth_page.html')
 
 
-@app.route('/wish-list')
+@app.route('/wish_list')
 def wish_list():
     return render_template('wish_list.html')
 
@@ -77,7 +77,7 @@ def edit_list(id):
     return render_template('edit_list.html')
 
 
-@app.route('/create-list', methods=['GET', 'POST'])
+@app.route('/create_list', methods=['GET', 'POST'])
 def create_list():
     return render_template('create_list.html')
 
