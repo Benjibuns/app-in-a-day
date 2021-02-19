@@ -1,0 +1,64 @@
+.index-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: calc(100vh - 100px);
+  font-family: 'Nunito', sans-serif;
+}
+
+.index-container__left {
+  margin: 30px;
+  padding-bottom: 205px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-wrapper__list {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  height: 125px;
+  width: 50%;
+}
+
+.all-list-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-container__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 205px;
+}
+
+.personalized-boxes {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-tips {
+  background-color: var(--dark);
+  color: var(--accent1);
+  box-shadow: 5px 5px 5px 5px var(--primary);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 25px;
+}
+
+.recipes {
+  background-color: var(--dark1);
+  color: var(--accent1);
+  box-shadow: 5px 5px 5px 5px var(--primary);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 25px;
+}

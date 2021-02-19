@@ -3,5 +3,41 @@
 {% block title %}Homepage{% endblock %} 
 
 {% block content %}
-  <h1>Hello</h1>
+
+  <div class="index-container">
+    <div class="index-container__left">
+      <div class="button-wrapper">
+        <div class="button-wrapper__list">
+          <a href="/create_list">Create New List</a>
+          <a href="/wish_list">Wishlist</a>
+        </div>
+      </div>
+      <div class="all-list-wrapper">
+        <h1>ALL LISTS</h1>
+      </div>
+    </div>
+    <div class="index-container__right">
+      <div class="personalized-boxes">
+        <div class="shopping-tips">
+          <h1>SHOPPING TIPS</h1>
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur.</li>
+            <li>Sequi dolorum maiores perferendis beatae quae?</li>
+            <li>Voluptatum facere architecto soluta accusamus quo.</li>
+            <li>Rem doloribus iusto velit facere saepe!</li>
+          </ul>
+        </div>
+        <div class="recipes">
+          <h1>RECIPES</h1>
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, modi?</li>
+            <li>Ducimus voluptatibus repellendus quisquam dolores, voluptas corrupti? Animi, est nesciunt?</li>
+            <li>A earum voluptatum, fugit totam omnis culpa quae saepe repudiandae.</li>
+            <li>Suscipit debitis aliquid non rerum quod officia odio laboriosam vel?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 {% endblock %}
