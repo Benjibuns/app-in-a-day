@@ -1,0 +1,4 @@
+{% for list in all_lists %}
+<h3>title: {{list.title}}</h3> 
+<a href="/single_shopping_list/{{ list.id }}">View List</a>
+{% endfor %}
