@@ -93,7 +93,7 @@ def edit_list(id):
         single_list.title = title
         db.session.commit()
         flash('your list was Edited', 'update')
-        return redirect('/single_shopping_list/{single_list.id}')
+        return redirect(f'/single_shopping_list/{single_list.id}')
     else:
         single_list = ShoppingList.query.get(id)
         return render_template('edit_list.html', single_list = single_list)
