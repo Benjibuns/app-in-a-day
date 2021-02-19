@@ -4,10 +4,8 @@
 {% block content %}
 
   <div class="contact-us-container">
-    <div class="contact-us-comtainer__left">
-      <div>
-        <img src="../static/images/MakingList.jpg" alt="list photo">
-      </div>
+    <div class="contact-us-container__left">
+      <img class="contact-us-container__img" src="../static/images/MakingList.jpg" alt="list photo">
       <div class="contact-info-wrapper">
         <div class="contact-info">
           <p>Email: </p>
@@ -24,7 +22,14 @@
         </div>
       </div>
     </div>
-    <div></div>
+    <div class="contact-us-container__right">
+      <form action="#" class="contact-us">
+        <input type="text" name="Full Name" placeholder="Full Name" class="contact-us__input" />  
+        <input type="text" name="Email" placeholder="Email" class="contact-us__input" />
+        <textarea placeholder="Message" rows="25" class="contact-us__input-message"></textarea>
+        <input type="button" value="Submit" class="contact-us__button" />
+      </form>
+    </div>
   </div>
 
 {% endblock %}
