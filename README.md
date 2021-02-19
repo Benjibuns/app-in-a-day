@@ -1,4 +1,5 @@
 # Listful
+  - This is an app that we were tasked with during out time at Bottega.
 
 # How to set-up app
   - [read this documentation](./app/README.md)
