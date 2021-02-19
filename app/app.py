@@ -87,17 +87,16 @@ def single_shopping_list(id):
 
 @app.route('/edit_list/<id>', methods=['GET', 'POST'])
 def edit_list(id):
-    return render_template('edit_list.html')
-# if request.method == 'POST':
-#     single_list = ShoppingList.query.get(id)
-#     title = request.form.get('title')
-#     single_list.title = title
-#     db.session.commit()
-#     flash('your list was Edited', 'update')
-#     return redirect('/single_shopping_list/{single_list.id}')
-# else:
-#     single_list = ShoppingList.query.get(id)
-#     return render_template('edit_list.html', single_list = single_list)
+    if request.method == 'POST':
+        single_list = ShoppingList.query.get(id)
+        title = request.form.get('title')
+        single_list.title = title
+        db.session.commit()
+        flash('your list was Edited', 'update')
+        return redirect('/single_shopping_list/{single_list.id}')
+    else:
+        single_list = ShoppingList.query.get(id)
+        return render_template('edit_list.html', single_list = single_list)
 
 
 @app.route('/create_list', methods=['GET', 'POST'])
