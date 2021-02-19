@@ -2,6 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.index-container__left {
+  margin: 30px;
+  padding-bottom: 205px;
 }
 
 .button-wrapper {
@@ -16,4 +22,12 @@
   justify-content: space-around;
   height: 125px;
   width: 50%;
+}
+
+.index-container__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 205px;
+
 }

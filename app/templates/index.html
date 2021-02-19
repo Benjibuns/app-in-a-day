@@ -5,17 +5,28 @@
 {% block content %}
 
   <div class="index-container">
-    <div class="button-wrapper">
-      <div class="button-wrapper__list">
-        <form action="/create-list">
-          <button type="submit">Create New List</button>
-        </form>
-        <form action="/wish-list">
-          <button type="submit">Wishlist</button>
-        </form>
+    <div class="index-container__left">
+      <div class="button-wrapper">
+        <div class="button-wrapper__list">
+          <form action="/create-list">
+            <button type="submit">Create New List</button>
+          </form>
+          <form action="/wish-list">
+            <button type="submit">Wishlist</button>
+          </form>
+        </div>
       </div>
     </div>
-    <div></div>
+    <div class="index-container__right">
+      <div class="personalized-boxes">
+        <div class="shopping-tips">
+          <h1>SHOPPING TIPS</h1>
+        </div>
+        <div class="recipes">
+          <h1>RECIPES</h1>
+        </div>
+      </div>
+    </div>
   </div>
   
 {% endblock %}
