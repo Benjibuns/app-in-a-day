@@ -21,7 +21,7 @@ class ShoppingList(db.Model):
 
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(25), unique=True, nullable=False)
+    name = db.Column(db.String(25), unique=False, nullable=False)
     quantity = db.Column(db.Integer, unique=False, nullable=False)
     description = db.Column(db.String(100), unique=False, nullable=True)
     shopping_list_id = db.Column(db.Integer, db.ForeignKey('shopping_list.id'), nullable=False)
