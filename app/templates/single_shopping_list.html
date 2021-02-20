@@ -13,9 +13,7 @@
     <input type="submit" value="Add Item"> 
   </form>
 
-  <form action="/edit_list/{{ single_list.id }}">
-    <button type="submit">Edit List</button>
-  </form>
+  <a href="/edit_list/{{ single_list.id }}">Edit list</a>
 
   <form action="/delete_list/{{ single_list.id }}" method="POST">
     <button type="submit">Delete List</button>
