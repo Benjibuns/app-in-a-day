@@ -127,7 +127,7 @@ def edit_item():
 
 @app.route('/delete_item', methods=['POST'])
 def delete_item():
-    return render_template('delete_item')
+    return render_template('delete_item.html')
 
 
 if __name__ == '__main__':
