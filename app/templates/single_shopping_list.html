@@ -12,7 +12,12 @@
     <input type="text" name="description" placeholder="description">
     <input type="submit" value="Add Item"> 
   </form>
+
   <form action="/edit_list/{{ single_list.id }}">
-    <input type="submit" value="Edit List">
+    <button type="submit">Edit List</button>
+  </form>
+
+  <form action="/delete_list/{{ single_list.id }}" method="POST">
+    <button type="submit">Delete List</button>
   </form>
 {% endblock %}
