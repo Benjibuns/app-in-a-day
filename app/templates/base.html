@@ -14,6 +14,10 @@
     />
     <link
       rel="stylesheet"
+      href="{{ url_for('static', filename='styles/about-us.css') }}"
+    />
+    <link
+      rel="stylesheet"
       href="{{ url_for('static', filename='styles/index.css') }}"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -36,7 +40,7 @@
         <div class="nav-wrapper__right">
           <a href="" class="nav-link">Wishlist</a>
           <a href="" class="nav-link">Shopping Lists</a>
-          <a href="" class="nav-link">About Us</a>
+          <a href="/about_us" class="nav-link">About Us</a>
           <a href="/contact_us" class="nav-link">Contact Us</a>
           <a href="" class="nav-link--big">Account</a>
         </div>
