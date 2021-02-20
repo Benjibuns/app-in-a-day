@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 class ShoppingList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(25), unique=False, nullable=False)
-    items = db.relationship('Item', backref='shopping_list', lazy=True)
+    items = db.relationship('Item', backref='shopping_list', lazy=True, cascade="all, delete-orphan")
 
 
 class Item(db.Model):
@@ -71,7 +71,6 @@ def shopping_lists():
 @app.route('/single_shopping_list/<id>', methods=['GET', 'POST'])
 def single_shopping_list(id):
     if request.method == 'POST':
-        # TODO: need to handle unique name check. currently it breaks the code
         single_list = ShoppingList.query.get(id)
         name = request.form.get('name')
         quantity = request.form.get('quantity')
@@ -82,7 +81,15 @@ def single_shopping_list(id):
         return redirect(f'/single_shopping_list/{single_list.id}')
     else:
         single_list = ShoppingList.query.get(id)
-        return render_template('single_shopping_list.html', single_list = single_list)
+        if single_list:
+            return render_template('single_shopping_list.html', single_list = single_list)
+        else:
+            return redirect("/no_match")
+
+
+@app.route("/no_match")
+def no_match():
+    return render_template("no_match.html")
 
 
 @app.route('/edit_list/<id>', methods=['GET', 'POST'])
@@ -103,9 +110,14 @@ def create_list():
             return render_template('create_list.html')
 
 
-@app.route('/delete_list', methods=['POST'])
-def delete_list():
-    return render_template('delete_list')
+@app.route('/delete_list/<id>', methods=['POST'])
+def delete_list(id):
+    list = ShoppingList.query.get(id)
+    db.session.delete(list)
+    db.session.commit()
+    flash("Your List was deleted", "danger")
+
+    return redirect('/shopping_lists')
 
 
 @app.route('/edit_item', methods=['GET', 'POST'])
@@ -115,7 +127,7 @@ def edit_item():
 
 @app.route('/delete_item', methods=['POST'])
 def delete_item():
-    return render_template('delete_item.html')
+    return render_template('delete_item')
 
 
 if __name__ == '__main__':
