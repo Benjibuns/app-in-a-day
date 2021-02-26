@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
-
 {% block title %}Create List{% endblock %} 
 {% block content %}
-<h1>Hello from single</h1>
+  {% for item in single_list.items %}
+    <span>id: {{item.id}}</span> 
+    <span>name: {{item.name}}</span>
+    <span>quantity: {{item.quantity}}</span> 
+    <span>description: {{item.description}}</span>
+    <br></br>
+  {% endfor %}
+  <h1>Hello from single</h1>
   <form action="/single_shopping_list/{{ single_list.id }}" method="POST">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" placeholder="name" autocomplete="off">
