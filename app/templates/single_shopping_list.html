@@ -1,21 +1,24 @@
 {% extends 'base.html' %}
 {% block title %}Create List{% endblock %} 
 {% block content %}
-  {% for item in single_list %}
-    <h3>title: {{list.title}}</h3> 
-    <a href="/single_shopping_list/{{ list.id }}">View List</a>
+  {% for item in single_list.items %}
+    <span>id: {{item.id}}</span> 
+    <span>name: {{item.name}}</span>
+    <span>quantity: {{item.quantity}}</span> 
+    <span>description: {{item.description}}</span>
+    <br></br>
   {% endfor %}
   <h1>Hello from single</h1>
-    <form action="/single_shopping_list/{{ single_list.id }}" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" placeholder="name" autocomplete="off">
-      <label for="quantity">quantity</label>
-      <input type="text" name="quantity" placeholder="quantity">
-      <label for="description">description</label>
-      <input type="text" name="description" placeholder="description">
-      <input type="submit" value="Add Item"> 
-    </form>
-    <form action="/edit_list/{{ single_list.id }}">
-      <input type="submit" value="Edit List">
-    </form>
+  <form action="/single_shopping_list/{{ single_list.id }}" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="name" autocomplete="off">
+    <label for="quantity">quantity</label>
+    <input type="text" name="quantity" placeholder="quantity">
+    <label for="description">description</label>
+    <input type="text" name="description" placeholder="description">
+    <input type="submit" value="Add Item"> 
+  </form>
+  <form action="/edit_list/{{ single_list.id }}">
+    <input type="submit" value="Edit List">
+  </form>
 {% endblock %}
